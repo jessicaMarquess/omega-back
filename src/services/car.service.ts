@@ -1,36 +1,37 @@
-import { Guid } from "guid-typescript"
-import Car from "../entities/car.entity"
-import IRepository from "../repositories/base.interface"
-import CarRepository from "../repositories/car.repository"
-import IService from "./base.inteface"
+import { Guid } from "guid-typescript";
+import Car from "../entities/car.entity";
+import IRepository from "../repositories/base.interface";
+import CarRepository from "../repositories/car.repository";
+import IService from "./base.inteface";
 
 class CarService implements IService<Car> {
-    
-    repository: IRepository<Car> = new CarRepository()
+    repository: IRepository<Car> = new CarRepository();
 
-    constructor() {
-        
-    }
-    
+    constructor() {}
+
     add(entity: Car): void {
-        throw new Error("Method not implemented.")
+        throw new Error("Method not implemented.");
     }
     remove(id: Guid): void {
-        throw new Error("Method not implemented.")
+        throw new Error("Method not implemented.");
     }
     getById(id: Guid): Car {
-        throw new Error("Method not implemented.")
+        throw new Error("Method not implemented.");
     }
     update(id: Guid, entity: Car): void {
-        throw new Error("Method not implemented.")
+        throw new Error("Method not implemented.");
     }
     exists(id: Guid): boolean {
-        throw new Error("Method not implemented.")
+        throw new Error("Method not implemented.");
     }
 
     getAll(): Car[] {
-        return this.repository.getAll()
+        return this.repository.getAll();
+    }
+
+    addNewEntity(elements: JSON): Car {
+        return this.repository.addNewEntity(elements);
     }
 }
 
-export default CarService
+export default CarService;

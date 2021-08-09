@@ -1,20 +1,19 @@
 import Entity from "./base.entity";
 
-class Car extends Entity{
+class Car extends Entity {
+    public readonly brand: string;
+    public readonly model: string;
+    private ensurance: boolean = false;
 
-    public readonly brand : string
-    public readonly model : string
-    private ensurance : boolean = false
-
-    constructor(brand: string, model:string) {
+    constructor(brand: string, model: string) {
         super();
-        this.brand = brand
-        this.model = model
+        this.brand = brand;
+        this.model = model;
     }
 
-    makeEnsurance(){
+    makeEnsurance() {
         this.ensurance = true;
     }
 }
 
-export default Car
+export default Car;

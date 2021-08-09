@@ -4,8 +4,7 @@ import IRepository from "../repositories/base.interface";
 import CoffeeMakerRepository from "../repositories/coffeemaker.repository";
 import IService from "./base.inteface";
 
-class CoffeeMakerService implements IService<CoffeMaker>{
-    
+class CoffeeMakerService implements IService<CoffeMaker> {
     repository: IRepository<CoffeMaker> = new CoffeeMakerRepository();
 
     add(entity: CoffeMaker): void {
@@ -26,9 +25,9 @@ class CoffeeMakerService implements IService<CoffeMaker>{
     exists(id: Guid): boolean {
         throw new Error("Method not implemented.");
     }
-
-    
-
+    addNewEntity(elements: JSON): CoffeMaker {
+        return this.repository.addNewEntity(elements);
+    }
 }
 
-export default CoffeeMakerService
+export default CoffeeMakerService;

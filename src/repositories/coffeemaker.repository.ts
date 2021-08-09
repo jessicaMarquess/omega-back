@@ -2,10 +2,8 @@ import { Guid } from "guid-typescript";
 import CoffeMaker from "../entities/coffemaker.entity";
 import IRepository from "./base.interface";
 
-class CoffeeMakerRepository implements IRepository<CoffeMaker>{
-
-    private coffeeMakers : CoffeMaker[] = [ new CoffeMaker('dolce gusto')  ]
-
+class CoffeeMakerRepository implements IRepository<CoffeMaker> {
+    public coffeeMakers: CoffeMaker[] = [new CoffeMaker("dolce gusto")];
 
     add(entity: CoffeMaker): void {
         throw new Error("Method not implemented.");
@@ -20,12 +18,14 @@ class CoffeeMakerRepository implements IRepository<CoffeMaker>{
         throw new Error("Method not implemented.");
     }
     update(id: Guid, entity: CoffeMaker): void {
-        throw new Error("Method not implemented.");
+        const i = this.coffeeMakers.findIndex(
+            (coffeeMaker) => coffeeMaker.id == id.toString()
+        );
+        this.coffeeMakers[i] = entity;
     }
     exists(id: Guid): boolean {
-        throw new Error("Method not implemented.");
+        return this.coffeeMakers.some((e) => e.id == id.toString());
     }
-
 }
 
-export default CoffeeMakerRepository
+export default CoffeeMakerRepository;

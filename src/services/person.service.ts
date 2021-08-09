@@ -5,13 +5,14 @@ import IRepository from "../repositories/base.interface";
 import IService from "./base.inteface";
 
 class PersonService implements IService<Person> {
-    repository: IRepository<Person> = new PersonRepository;
-    
+    repository: IRepository<Person> = new PersonRepository();
+
     add(entity: Person): void {
         return this.repository.add(entity);
     }
     remove(id: Guid): void {
-        if(!this.repository.exists(id)) throw new Error(`Person of id ${id} does not exist`);
+        if (!this.repository.exists(id))
+            throw new Error(`Person of id ${id} does not exist`);
         this.repository.remove(id);
     }
     getAll(): Person[] {
@@ -20,7 +21,7 @@ class PersonService implements IService<Person> {
     getById(id: Guid): Person {
         let result = this.repository.getById(id);
 
-        if(result == null) throw new Error(`Person of ${id} does not exists`)
+        if (result == null) throw new Error(`Person of ${id} does not exists`);
 
         return result;
     }
@@ -29,6 +30,9 @@ class PersonService implements IService<Person> {
     }
     exists(id: Guid): boolean {
         return this.repository.exists(id);
+    }
+    addNewEntity(elements: JSON): Person {
+        return this.repository.addNewEntity(elements);
     }
 }
 
