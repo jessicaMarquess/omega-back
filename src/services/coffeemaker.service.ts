@@ -25,9 +25,7 @@ class CoffeeMakerService implements IService<CoffeMaker> {
     exists(id: Guid): boolean {
         throw new Error("Method not implemented.");
     }
-    addNewEntity(elements: JSON): CoffeMaker {
-        return this.repository.addNewEntity(elements);
-    }
+
 }
 
 export default CoffeeMakerService;

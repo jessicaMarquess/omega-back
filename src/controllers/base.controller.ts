@@ -64,16 +64,6 @@ abstract class BaseController<TEntity extends Entity> {
             return res.json({ message });
         }
     };
-
-    add = (req: Request, res: Response) => {
-        const args = req.body;
-        this.service.addNewEntity(req.body);
-
-        const newEntity = this.service.addNewEntity(args);
-        this.service.add(newEntity);
-
-        return res.json({ message: "Oi", element: newEntity });
-    };
 }
 
 export default BaseController;

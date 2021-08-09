@@ -42,9 +42,7 @@ class EmployeeService implements IService<Employee> {
         employee.raiseSalary(percentual);
     }
 
-    addNewEntity(elements: JSON): Employee {
-        return this.repository.addNewEntity(elements);
-    }
+  
 }
 
 export default EmployeeService;

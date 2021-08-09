@@ -31,9 +31,7 @@ class PersonService implements IService<Person> {
     exists(id: Guid): boolean {
         return this.repository.exists(id);
     }
-    addNewEntity(elements: JSON): Person {
-        return this.repository.addNewEntity(elements);
-    }
+ 
 }
 
 export default PersonService;

@@ -29,9 +29,7 @@ class CarService implements IService<Car> {
         return this.repository.getAll();
     }
 
-    addNewEntity(elements: JSON): Car {
-        return this.repository.addNewEntity(elements);
-    }
+
 }
 
 export default CarService;

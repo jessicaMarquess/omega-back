@@ -11,7 +11,7 @@ interface IService<TEntity extends Entity> {
     getById(id: Guid): TEntity;
     update(id: Guid, entity: TEntity): void;
     exists(id: Guid): boolean;
-    addNewEntity(elements: JSON): TEntity;
+
 }
 
 export default IService;
